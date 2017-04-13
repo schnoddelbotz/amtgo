@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-lg-12">
+      <h1 class="page-header">amtc-web Installation</h1>
+  </div>
+</div>
+{{#if freshsetup}}
+  {{#unless preconditionsMet}}
+    <div class="row">
+      <div class="col-lg-12">
+          <h3>Installation precondition tests</h3>
+          At least one PHP PDO driver is required.
+          <ul id="phptests">
+            {{#if phptests}}
+            {{#each phptests}}
+              <li>
+                {{check-mark result}} {{description}}
+                {{#unless result}}(potential fix: {{remedy}}){{/unless}}
+              </li>
+            {{/each}}
+            {{else}}
+              <i class="fa fa-spinner fa-spin"></i> <i>running tests...</i>
+            {{/if}}
+          </ul>
+      </div>
+    </div>
+  {{/unless}}
+
+  {{#if preconditionsMet}}
+    <div class="row">
+      <div class="col-lg-12">
+          <div class="alert alert-success">
+            Please create an initial user account for amtc-web / amtgo.
+          </div>
+
+          <form role="form">
+
+                <div class="form-group">
+                    <label>Username</label>
+                    {{input type="text" value=mysqlUser class="form-control" placeholder="joe"}}
+                </div>
+                <div class="form-group">
+                    <label>User's full name</label>
+                    {{input type="text" value=mysqlHost class="form-control" placeholder="Joe User"}}
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    {{input type="password" value=mysqlPassword class="form-control" placeholder="joe,2014-$ecure!"}}
+                </div>
+
+
+              <div class="form-group">
+                <div class="alert alert-danger">
+                  <b>Warning!</b><br>
+                  After submitting this form, you will only be able to come here again by
+                  either removing all entries from the database's users table or by
+                  completely deleting the database! You may alternatively create additional
+                  users by using amtgo via command-line -- see help <pre>amtgo server -h</pre>
+                </div>
+
+                <button class="btn btn-default" {{action 'doneEditing'}}><span class="fa fa-save"></span> Create user</button>
+              </div>
+          </form>
+      </div>
+    </div>
+  {{else}}
+    <div class="form-group">
+      <div class="alert alert-danger">
+        <em>Error!</em>
+        Not all preconditions met. Needs to be fixed to proceed with initial installation.<br>
+      </div>
+    </div>
+  {{/if}}
+{{else}}
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-danger">
+          <h3>Installation tool locked</h3>
+          <p>As a configuration file already exists at <code>config/siteconfig.php</code>,
+             this setup tool is locked.<br> You have to manually remove the file to re-run setup.</p>
+        </div>
+    </div>
+  </div>
+{{/if}}
+

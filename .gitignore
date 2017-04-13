@@ -1,0 +1,9 @@
+.DS_Store
+amtgo.db
+key.pem
+cert.pem
+amtc/
+amt-cmd/
+*.out
+dependencies
+amtpassword.txt
