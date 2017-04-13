@@ -102,6 +102,7 @@ Besides golang's standard library, amtgo relies on:
 
 - [urfave/cli](https://github.com/urfave/cli) for CLI parsing
 - [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) as SQLite driver
+- [jmoiron/sqlx](https://github.com/jmoiron/sqlx) as extensions to golang's database/sql package
 - [go-sql-driver/mysql](https://github.com/go-sql-driver/mysql) as MySQL driver
 - [gorilla](https://github.com/gorilla) handlers, mux, securecookie & sessions for amtc-web
 - [xinsnake/go-http-digest-auth-client](https://github.com/xinsnake/go-http-digest-auth-client),
