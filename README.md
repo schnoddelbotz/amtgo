@@ -1,4 +1,4 @@
-# amtgo [![Build Status](https://travis-ci.org/schnoddelbotz/amtgo.svg?branch=master)](https://travis-ci.org/schnoddelbotz/amtgo)
+# amtgo [![Build Status](https://travis-ci.org/schnoddelbotz/amtgo.svg?branch=master)](https://travis-ci.org/schnoddelbotz/amtgo) [![GoDoc](https://godoc.org/github.com/schnoddelbotz/amtgo/amt?status.png)](https://godoc.org/github.com/schnoddelbotz/amtgo/amt)
 
 A [golang](https://golang.org/) implementation of
 [amtc](https://github.com/schnoddelbotz/amtc) and its amtc-web GUI.
