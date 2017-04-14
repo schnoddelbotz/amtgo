@@ -21,7 +21,7 @@ dependencies:
 	touch dependencies
 
 release: xgo dependencies
-	xgo -go 1.8 -ldflags "$(LDFLAGS)" -targets "$(PLATFORMS)" .
+	xgo -go 1.8.x -ldflags "$(LDFLAGS)" -targets "$(PLATFORMS)" .
 
 ziprelease: release
 	for bin in amtgo-*; do zip $${bin}_v$(VERSION).zip $$bin; done
