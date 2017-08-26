@@ -4,6 +4,7 @@ key.pem
 cert.pem
 amtc/
 amt-cmd/
+web-assets/
 *.out
 dependencies
 amtpassword.txt
